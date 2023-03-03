@@ -5,6 +5,6 @@
     }
   ],
   "settings": {
-    "cSpell.words": ["fastapirefresher", "pymysql", "sqlalchemy"]
+    "cSpell.words": ["fastapirefresher", "pymysql", "sqlalchemy", "sqltypes"]
   }
 }
