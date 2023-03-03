@@ -1,5 +1,6 @@
 from fastapi import APIRouter
 from db import conn
+from models.index import users
 
 user = APIRouter()
 
