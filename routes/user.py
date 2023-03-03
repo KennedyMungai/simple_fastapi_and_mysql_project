@@ -23,7 +23,7 @@ async def write_data(user: User):
     return conn.execute(users.select()).fetchall()
 
 @user.put('/{id}')
-async def read_data(id: int, user: User):
+async def update_data(id: int, user: User):
     conn.execute(users.update( 
         name = user.name,
         email = user.email,
@@ -32,6 +32,6 @@ async def read_data(id: int, user: User):
     
     return conn.execute(users.select()).fetchall()
 
-@user.get('/')
-async def read_data():
+@user.delete('/{id}')
+async def delete_data():
     return conn.execute(users.select()).fetchall()
