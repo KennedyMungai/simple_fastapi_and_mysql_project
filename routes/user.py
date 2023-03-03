@@ -24,11 +24,11 @@ async def write_data(user: User):
 
 @user.put('/{id}')
 async def read_data(id: int, user: User):
-    conn.execute(users.update().values(
+    conn.execute(users.update( 
         name = user.name,
         email = user.email,
         password = user.password,
-    ))
+    ).where(users.c.id == id))
     
     return conn.execute(users.select()).fetchall()
 
