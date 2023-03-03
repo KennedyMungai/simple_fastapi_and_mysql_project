@@ -34,4 +34,6 @@ async def update_data(id: int, user: User):
 
 @user.delete('/{id}')
 async def delete_data():
-    return conn.execute(users.select()).fetchall()
+    conn.execute(users.delete().where(users.c.id == id))
+    
+    return True
