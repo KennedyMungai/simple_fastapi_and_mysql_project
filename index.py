@@ -6,4 +6,6 @@ app = FastAPI()
 
 @app.get('/')
 def index():
-    return {'Chickens R Us'}
+    return {
+            "Hello" : "Good Morning"
+            }
