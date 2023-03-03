@@ -2,6 +2,7 @@
 """
 from sqlalchemy import Table, Column
 from db import meta
+from sqlalchemy.sql.sqltypes import Integer, String
 
 users = Table(
     'users', meta,
