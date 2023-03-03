@@ -22,8 +22,14 @@ async def write_data(user: User):
         ))
     return conn.execute(users.select()).fetchall()
 
-@user.get('/')
-async def read_data():
+@user.put('/{id}')
+async def read_data(id: int, user: User):
+    conn.execute(users.update().values(
+        name = user.name,
+        email = user.email,
+        password = user.password,
+    ))
+    
     return conn.execute(users.select()).fetchall()
 
 @user.get('/')
